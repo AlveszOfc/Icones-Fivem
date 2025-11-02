@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Image Proxy</title>
+</head>
+<body>
+    <script>
+        // Pega o parâmetro 'image' da URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const imageUrl = urlParams.get('image');
+        
+        if (imageUrl) {
+            // Se for um nome simples (como "notify"), constrói a URL completa
+            let finalUrl;
+            if (imageUrl.includes('http')) {
+                // Já é uma URL completa
+                finalUrl = imageUrl;
+            } else {
+                // É um nome de arquivo, adiciona ao seu repositório
+                finalUrl = `https://raw.githubusercontent.com/AlveszOfc/Icones-Fivem/main/${imageUrl}.png`;
+            }
+            
+            // Redireciona para a imagem
+            window.location.href = finalUrl;
+        } else {
+            document.body.innerHTML = '<p>Parâmetro "image" não encontrado</p>';
+        }
+    </script>
+</body>
+</html>
