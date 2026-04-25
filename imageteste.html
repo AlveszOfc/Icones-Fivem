@@ -7,18 +7,25 @@
             padding: 0;
             background: transparent;
             overflow: hidden;
-            width: 100%;
-            height: 100%;
+        }
+
+        /* BASE FIXA (igual hack menu) */
+        .container {
+            width: 1920px;
+            height: 1080px;
+            transform: scale(0.5); /* controla o tamanho */
+            transform-origin: top left;
         }
 
         img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* ou cover */
         }
     </style>
 </head>
 <body>
-    <img src="suaimagem.png">
+    <div class="container">
+        <img src="suaimagem.png">
+    </div>
 </body>
 </html>
